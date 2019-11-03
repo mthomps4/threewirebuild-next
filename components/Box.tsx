@@ -1,16 +1,18 @@
 import styled from '@emotion/styled';
-import {
-  BackgroundColorProps,
-  BackgroundProps,
-  color,
-  ColorProps,
-  layout,
-  LayoutProps,
-  space,
-  SpaceProps
-} from 'styled-system';
+import { color, ColorProps, layout, LayoutProps, space, SpaceProps, variant } from 'styled-system';
 
-type BoxProps = ColorProps & BackgroundProps & BackgroundColorProps & LayoutProps & SpaceProps;
+type ResponsiveValue<T> =
+  | T
+  | (T | null)[]
+  | {
+      [key: string]: T;
+    };
+
+export interface BoxStyleProps {
+  variant?: ResponsiveValue<string>;
+}
+
+type BoxProps = ColorProps & LayoutProps & SpaceProps & BoxStyleProps;
 
 const Box = styled('div')<BoxProps>(
   {
@@ -18,7 +20,19 @@ const Box = styled('div')<BoxProps>(
   },
   space,
   layout,
-  color
+  color,
+  variant({
+    variants: {
+      row: {
+        display: 'flex',
+        flexDirection: 'row'
+      },
+      column: {
+        display: 'flex',
+        flexDirection: 'column'
+      }
+    }
+  })
 );
 
 export default Box;
