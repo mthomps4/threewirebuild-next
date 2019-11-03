@@ -1,19 +1,12 @@
 import { NextPage } from 'next';
 import * as React from 'react';
 import Box from '../components/Box';
-import Layout from '../components/Layout';
-
 const IndexPage: NextPage = () => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
-      {/* <h1>Hello Next.js 👋</h1>
-      <p>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </p>
-
-      <Box color="blue">Hello Styled Component</Box>
+    <Box>
+      <Box color="blue" border="1px solid blue">
+        Hello Styled Component
+      </Box>
       <Box bg="navy" color="white" m={3}>
         Hello Styled Component
       </Box>
@@ -28,10 +21,10 @@ const IndexPage: NextPage = () => {
         md=.5 <br />
         sm =.75 <br />
         _=1
-      </Box> */}
+      </Box>
 
       <p>Flex Row:</p>
-      <Box variant="row" bg="navy" color="white" m={2}>
+      <Box variant="row" bg="navy" color="white" m={2} justifyContent="space-around">
         <p>Item 1</p>
         <p>Item 2</p>
         <p>Item 3</p>
@@ -43,7 +36,7 @@ const IndexPage: NextPage = () => {
         <p>Item 2</p>
         <p>Item 3</p>
       </Box>
-    </Layout>
+    </Box>
   );
 };
 

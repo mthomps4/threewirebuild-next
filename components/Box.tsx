@@ -1,5 +1,24 @@
 import styled from '@emotion/styled';
-import { color, ColorProps, layout, LayoutProps, space, SpaceProps, variant } from 'styled-system';
+import {
+  background,
+  BackgroundProps,
+  border,
+  BorderProps,
+  color,
+  ColorProps,
+  compose,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
+  layout,
+  LayoutProps,
+  position,
+  PositionProps,
+  space,
+  SpaceProps,
+  variant
+} from 'styled-system';
 
 type ResponsiveValue<T> =
   | T
@@ -12,27 +31,42 @@ export interface BoxStyleProps {
   variant?: ResponsiveValue<string>;
 }
 
-type BoxProps = ColorProps & LayoutProps & SpaceProps & BoxStyleProps;
+type BoxProps = BoxStyleProps &
+  ColorProps &
+  LayoutProps &
+  SpaceProps &
+  GridProps &
+  FlexboxProps &
+  BackgroundProps &
+  BorderProps &
+  PositionProps;
 
 const Box = styled('div')<BoxProps>(
   {
     boxSizing: 'border-box'
   },
-  space,
-  layout,
-  color,
-  variant({
-    variants: {
-      row: {
-        display: 'flex',
-        flexDirection: 'row'
-      },
-      column: {
-        display: 'flex',
-        flexDirection: 'column'
+  compose(
+    space,
+    layout,
+    color,
+    background,
+    border,
+    position,
+    flexbox,
+    grid,
+    variant({
+      variants: {
+        row: {
+          display: 'flex',
+          flexDirection: 'row'
+        },
+        column: {
+          display: 'flex',
+          flexDirection: 'column'
+        }
       }
-    }
-  })
+    })
+  )
 );
 
 export default Box;
