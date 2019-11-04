@@ -69,4 +69,9 @@ const Box = styled('div')<BoxProps>(
   )
 );
 
+Box.defaultProps = {
+  bg: 'boxBg',
+  color: 'boxColor'
+};
+
 export default Box;
