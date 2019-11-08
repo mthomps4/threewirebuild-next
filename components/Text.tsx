@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
-import { color, ColorProps, compose, space, SpaceProps, TypographyProps, variant } from 'styled-system';
+import { color, ColorProps, compose, space, SpaceProps, typography, TypographyProps } from 'styled-system';
 import { ThemeProps } from '../theme';
 
 export interface TextBooleanProps {
+  // theme is passed as a prop from ThemeProvider via App
   theme?: ThemeProps;
   success?: Boolean;
   info?: Boolean;
@@ -33,35 +34,30 @@ const applyBoolStyles = (props: TextBooleanProps) => {
     dangerBox
   } = props;
 
-  if (success) return 'color: green';
-  if (info) return 'color: blue';
-  if (warning) return 'color: orange';
-  if (danger) return 'color: red;';
+  if (success && theme) return `color: ${theme.colors.success};`;
+  if (info && theme) return `color: ${theme.colors.info};`;
+  if (warning && theme) return `color: ${theme.colors.warning};`;
+  if (danger && theme) return `color: ${theme.colors.danger};`;
   if (primary && theme) return `color: ${theme.colors.primary}`;
   if (secondary && theme) return `color: ${theme.colors.secondary}`;
 
-  if (successBox) return 'color: green; background-color: lime; padding: 1em; margin-bottom: 1em;';
-  if (infoBox) return 'color: blue; background-color: cyan; padding: 1em; margin-bottom: 1em;';
-  if (warningBox) return 'color: red; background-color: orange; padding: 1em; margin-bottom: 1em;';
-  if (dangerBox) return 'color: maroon; background-color: red; padding: 1em; margin-bottom: 1em;';
+  if (successBox && theme)
+    return `color: ${theme.colors.success}; background-color: ${theme.bg.success}; padding: 1em; margin-bottom: 1em;`;
+  if (infoBox && theme)
+    return `color: ${theme.colors.info}; background-color: ${theme.bg.info}; padding: 1em; margin-bottom: 1em;`;
+  if (warningBox && theme)
+    return `color: ${theme.colors.warning}; background-color: ${theme.bg.warning}; padding: 1em; margin-bottom: 1em;`;
+  if (dangerBox && theme)
+    return `color: ${theme.colors.danger}; background-color: ${theme.bg.danger}; padding: 1em; margin-bottom: 1em;`;
+  return;
 };
 
 const Text = styled('div')<TextProps>(
-  {
-    boxSizing: 'border-box'
-  },
   applyBoolStyles,
   compose(
     space,
     color,
-    variant({
-      variants: {
-        dark: {
-          backgroundColor: 'black',
-          color: 'white'
-        }
-      }
-    })
+    typography
   )
 );
 
