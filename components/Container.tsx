@@ -50,33 +50,34 @@ const applyBoolStyles = ({ centerContent, red }: ContainerStyleProps) => {
   return styles;
 };
 
-const Container = styled.div<ContainerProps>`
-    ${`box-sizing: 'border-box';`}
-    ${props => applyBoolStyles(props)}
-    /* Componsed From Styled-System */
-    ${compose(
-      space,
-      layout,
-      color,
-      background,
-      border,
-      position,
-      flexbox,
-      grid,
-      variant({
-        variants: {
-          row: {
-            display: 'flex',
-            flexDirection: 'row'
-          },
-          column: {
-            display: 'flex',
-            flexDirection: 'column'
-          }
+const Container = styled('div')<ContainerProps>(
+  {
+    boxSizing: 'border-box'
+  },
+  applyBoolStyles,
+  compose(
+    space,
+    layout,
+    color,
+    background,
+    border,
+    position,
+    flexbox,
+    grid,
+    variant({
+      variants: {
+        row: {
+          display: 'flex',
+          flexDirection: 'row'
+        },
+        column: {
+          display: 'flex',
+          flexDirection: 'column'
         }
-      })
-    )}
-`;
+      }
+    })
+  )
+);
 
 Container.defaultProps = {};
 
