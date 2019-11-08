@@ -43,4 +43,4 @@ const Label = styled('label')<LabelProps>(
 
 Label.defaultProps = {};
 
-export default Container;
+export default Label;

@@ -1,9 +1,13 @@
 import { NextPage } from 'next';
 import * as React from 'react';
+import Column from '../components/Column';
 import Container from '../components/Container';
+import Label from '../components/Label';
 import Row from '../components/Row';
 import Spacer from '../components/Spacer';
 import Text from '../components/Text';
+import TextInput from '../components/TextInput';
+
 const IndexPage: NextPage = () => {
   return (
     <Container>
@@ -32,7 +36,7 @@ const IndexPage: NextPage = () => {
           <p>Item 2</p>
           <p>Item 3</p>
         </Container>
-        <Row red color="white" m={2} justifyContent="space-around">
+        <Row bg="purple" color="white" m={2} justifyContent="space-around">
           <p>Item 1</p>
           <p>Item 2</p>
           <p>Item 3</p>
@@ -44,7 +48,7 @@ const IndexPage: NextPage = () => {
           <p>Item 3</p>
         </Container>
         <p>Center Content:</p>
-        <Container red centerContent color="white" m={2}>
+        <Container bg="purple" centerContent color="white" m={2}>
           <p>Item 1</p>
           <p>Item 2</p>
           <p>Item 3</p>
@@ -67,6 +71,17 @@ const IndexPage: NextPage = () => {
         <Text infoBox>I'm a info box</Text>
         <Text warningBox>I'm a warning box</Text>
         <Text dangerBox>I'm a danger box</Text>
+      </Container>
+      <Container>
+        <Label htmlFor="username">Username:</Label>
+        <TextInput name="username" />
+      </Container>
+
+      <Container display="flex" justifyContent="center">
+        <Column width={1 / 2}>
+          <Label htmlFor="username">Username:</Label>
+          <TextInput name="username" />
+        </Column>
       </Container>
     </Container>
   );

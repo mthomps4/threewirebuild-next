@@ -30,7 +30,7 @@ type ResponsiveValue<T> =
 export interface ContainerStyleProps {
   variant?: ResponsiveValue<string>;
   centerContent?: Boolean;
-  red?: Boolean;
+  flex?: Boolean;
 }
 
 export type ContainerProps = ContainerStyleProps &
@@ -43,10 +43,10 @@ export type ContainerProps = ContainerStyleProps &
   BorderProps &
   PositionProps;
 
-const applyBoolStyles = ({ centerContent, red }: ContainerStyleProps) => {
+const applyBoolStyles = ({ centerContent, flex }: ContainerStyleProps) => {
   let styles = '';
   if (centerContent) styles = styles + 'display: flex; justify-content: center; align-items: center;';
-  if (red) styles = styles + 'background: red;';
+  if (flex) styles = styles + 'display: flex;';
   return styles;
 };
 

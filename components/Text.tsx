@@ -35,21 +35,41 @@ const applyBoolStyles = (props: TextBooleanProps) => {
     dangerBox
   } = props;
 
-  if (success && theme) return `color: ${themeGet('colors.success', 'green')};`;
-  if (info && theme) return `color: ${themeGet('colors.info', 'blue')};`;
-  if (warning && theme) return `color: ${theme.colors.warning};`;
-  if (danger && theme) return `color: ${theme.colors.danger};`;
-  if (primary && theme) return `color: ${theme.colors.primary}`;
-  if (secondary && theme) return `color: ${theme.colors.secondary}`;
+  if (success && theme) return `color: ${themeGet('colors.success', 'green')(props)};`;
+  if (info && theme) return `color: ${themeGet('colors.info', 'blue')(props)};`;
+  if (warning && theme) return `color: ${themeGet('colors.warning', 'orange')(props)};`;
+  if (danger && theme) return `color: ${themeGet('colors.danger', 'maroon')(props)};`;
+  if (primary && theme) return `color: ${themeGet('colors.primary', 'purple')(props)}`;
+  if (secondary && theme) return `color: ${themeGet('colors.secondary', 'pink')(props)}`;
 
   if (successBox && theme)
-    return `color: ${theme.colors.success}; background-color: ${theme.bg.success}; padding: 1em; margin-bottom: 1em;`;
+    return `
+      color: ${themeGet('colors.success', 'green')(props)};
+      background-color: ${themeGet('bg.success', 'lime')(props)};
+      padding: 1em;
+      margin-bottom: 1em;
+    `;
   if (infoBox && theme)
-    return `color: ${theme.colors.info}; background-color: ${theme.bg.info}; padding: 1em; margin-bottom: 1em;`;
+    return `
+      color: ${themeGet('colors.info', 'blue')(props)};
+      background-color: ${themeGet('bg.info', 'cyan')(props)};
+      padding: 1em;
+      margin-bottom: 1em;
+    `;
   if (warningBox && theme)
-    return `color: ${theme.colors.warning}; background-color: ${theme.bg.warning}; padding: 1em; margin-bottom: 1em;`;
+    return `
+      color: ${themeGet('colors.warning', 'orange')(props)};
+      background-color: ${themeGet('bg.warning', 'yellow')(props)};
+      padding: 1em;
+      margin-bottom: 1em;
+    `;
   if (dangerBox && theme)
-    return `color: ${theme.colors.danger}; background-color: ${theme.bg.danger}; padding: 1em; margin-bottom: 1em;`;
+    return `
+      color: ${themeGet('colors.danger', 'maroon')(props)};
+      background-color: ${themeGet('bg.danger', 'red')(props)};
+      padding: 1em;
+      margin-bottom: 1em;
+    `;
   return;
 };
 
