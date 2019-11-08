@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { themeGet } from '@styled-system/theme-get';
 import { color, ColorProps, compose, space, SpaceProps, typography, TypographyProps } from 'styled-system';
 import { ThemeProps } from '../theme';
 
@@ -34,8 +35,8 @@ const applyBoolStyles = (props: TextBooleanProps) => {
     dangerBox
   } = props;
 
-  if (success && theme) return `color: ${theme.colors.success};`;
-  if (info && theme) return `color: ${theme.colors.info};`;
+  if (success && theme) return `color: ${themeGet('colors.success', 'green')};`;
+  if (info && theme) return `color: ${themeGet('colors.info', 'blue')};`;
   if (warning && theme) return `color: ${theme.colors.warning};`;
   if (danger && theme) return `color: ${theme.colors.danger};`;
   if (primary && theme) return `color: ${theme.colors.primary}`;
