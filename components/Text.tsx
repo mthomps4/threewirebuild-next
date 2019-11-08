@@ -40,10 +40,10 @@ const applyBoolStyles = (props: TextBooleanProps) => {
   if (primary && theme) return `color: ${theme.colors.primary}`;
   if (secondary && theme) return `color: ${theme.colors.secondary}`;
 
-  if (successBox) return 'color: green; background-color: lime;';
-  if (infoBox) return 'color: blue; background-color: cyan;';
-  if (warningBox) return 'color: red; background-color: orange;';
-  if (dangerBox) return 'color: maroon; background-color: red;';
+  if (successBox) return 'color: green; background-color: lime; padding: 1em; margin-bottom: 1em;';
+  if (infoBox) return 'color: blue; background-color: cyan; padding: 1em; margin-bottom: 1em;';
+  if (warningBox) return 'color: red; background-color: orange; padding: 1em; margin-bottom: 1em;';
+  if (dangerBox) return 'color: maroon; background-color: red; padding: 1em; margin-bottom: 1em;';
 };
 
 const Text = styled('div')<TextProps>(
