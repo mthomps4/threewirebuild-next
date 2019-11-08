@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import Layout from '../../components/usersBoilerplate/Layout';
-import List from '../../components/usersBoilerplate/List';
 import { User } from '../../interfaces';
+import Layout from '../../usersBoilerplate/Layout';
+import List from '../../usersBoilerplate/List';
 import { sampleFetchWrapper } from '../../utils/sample-api';
 
 type Props = {

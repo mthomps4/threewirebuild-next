@@ -1,8 +1,8 @@
 import { NextPageContext } from 'next';
 import * as React from 'react';
-import Layout from '../../components/usersBoilerplate/Layout';
-import ListDetail from '../../components/usersBoilerplate/ListDetail';
 import { User } from '../../interfaces';
+import Layout from '../../usersBoilerplate/Layout';
+import ListDetail from '../../usersBoilerplate/ListDetail';
 import { sampleFetchWrapper } from '../../utils/sample-api';
 
 type Props = {
