@@ -53,7 +53,7 @@ const IndexPage: NextPage = () => {
       <Container>
         <h1>TEXT EXAMPLES:</h1>
 
-        <Text>I'm a normal text component...</Text>
+        <Text>I'm a normal text component</Text>
         <Text primary>I'm a primary text field</Text>
         <Text secondary>I'm a secondary text field</Text>
         <Text success>I'm a success text field</Text>
