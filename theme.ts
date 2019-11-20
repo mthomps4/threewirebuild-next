@@ -1,3 +1,5 @@
+import { ThemeProps } from './next-env';
+
 const breakpoints: any = ['40em', '52em', '64em', '80em'];
 // aliases
 breakpoints.sm = breakpoints[0];
@@ -29,29 +31,3 @@ export default <ThemeProps>{
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   breakpoints
 };
-
-interface BgColorTypes {
-  success: string;
-  info: string;
-  warning: string;
-  danger: string;
-  primary: string;
-  secondary: string;
-}
-
-interface ColorTypes {
-  black: string;
-  white: string;
-  blue: string;
-  navy: string;
-  success: string;
-  info: string;
-  warning: string;
-  danger: string;
-  primary: string;
-  secondary: string;
-}
-export interface ThemeProps {
-  colors: ColorTypes;
-  bg: BgColorTypes;
-}

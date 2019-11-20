@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { themeGet } from '@styled-system/theme-get';
 import { color, ColorProps, compose, space, SpaceProps, typography, TypographyProps } from 'styled-system';
-import { ThemeProps } from '../theme';
+import { ThemeProps } from '../next-env';
 
 export interface TextBooleanProps {
   // theme is passed as a prop from ThemeProvider via App
@@ -73,14 +73,7 @@ const applyBoolStyles = (props: TextBooleanProps) => {
   return;
 };
 
-const Text = styled('div')<TextProps>(
-  applyBoolStyles,
-  compose(
-    space,
-    color,
-    typography
-  )
-);
+const Text = styled('div')<TextProps>(applyBoolStyles, compose(space, color, typography));
 
 Text.defaultProps = {};
 

@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
 import * as React from 'react';
-import Column from '../components/Column';
-import Container from '../components/Container';
-import Label from '../components/Label';
-import Row from '../components/Row';
-import Spacer from '../components/Spacer';
+import Label from '../components/forms/Label';
+import TextInput from '../components/forms/TextInput';
+import Column from '../components/layout/Column';
+import Container from '../components/layout/Container';
+import Row from '../components/layout/Row';
+import Spacer from '../components/layout/Spacer';
 import Text from '../components/Text';
-import TextInput from '../components/TextInput';
 
 const IndexPage: NextPage = () => {
   return (
