@@ -1,13 +1,12 @@
-import { ThemeProvider } from 'emotion-theming';
+import { defaultTheme, ThemeProvider } from '@3wirebuild/styled-system';
 import App from 'next/app';
 import React from 'react';
-import theme from '../theme';
 
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={defaultTheme}>
         <Component {...pageProps} />
       </ThemeProvider>
     );
