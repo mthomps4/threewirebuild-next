@@ -8,12 +8,14 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@3wirebuild/styled-system": "^0.0.77",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   },
   "devDependencies": {
+    "@types/next": "^9.0.0",
     "@types/node": "^12.7.8",
     "@types/react": "^16.9.3",
     "@types/react-dom": "^16.9.1",
